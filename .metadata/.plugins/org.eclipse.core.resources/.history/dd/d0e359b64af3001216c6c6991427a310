@@ -1,0 +1,22 @@
+package com.REgame.src;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public abstract class Menu extends JPanel implements ActionListener {
+protected JButton b1; 
+
+public Menu() {
+	
+		b1 = new JButton("Disable middle button");
+		b1.setVerticalTextPosition(AbstractButton.CENTER);
+	    b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
+	    b1.setMnemonic(KeyEvent.VK_D);
+	    b1.setActionCommand("disable");
+
+	}
+}

@@ -1,0 +1,57 @@
+package com.REgame.src;
+ 
+import java.awt.event.*;
+import java.awt.*;
+ 
+import javax.swing.*;
+ 
+public class Menu extends JApplet implements ActionListener
+{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Screen2 scr=new Screen2();
+    JLabel screen;
+     
+    JFrame frame;
+    JButton play,quit;
+    public void init()
+    {
+        setLayout(new FlowLayout());
+         
+        screen= new JLabel(new ImageIcon ("back.png"));
+        frame = new JFrame("BOW MASTER");
+        play=new JButton("PLAY");
+        quit= new JButton("QUIT");
+         
+         
+        frame.add(screen);
+        frame.add(quit);
+        frame.add(play);
+         
+        play.addActionListener(this);
+        quit.addActionListener(this);
+         
+        frame.setSize(534,329);
+        frame.setResizable(false);
+        frame.setVisible(true);
+         
+    }
+     
+    public void actionPerformed(ActionEvent e) 
+    {
+        if(e.getSource()==quit)
+        {
+            System.exit(0);
+        }
+        if(e.getSource()==play)
+        {
+            Screen2 scr=new Screen2();
+            scr.setVisible(true);
+             
+        }
+         
+    }
+     
+}
